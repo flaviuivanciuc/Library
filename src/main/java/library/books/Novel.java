@@ -1,19 +1,21 @@
 package library.books;
 
+import library.Book;
 import library.Digital;
 
-import java.awt.print.Book;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
 
 public class Novel extends Book implements Digital {
 
     private String genre;
 
-    public Novel(String type) {
-        super();
-        this.genre = type;
+    public Novel(int nrPages, String name, String author, float price, int isbn, String genre) {
+        super(nrPages, name, author, price, isbn);
+        this.genre = genre;
     }
+
+//    public void getDescription(){
+//    }
+
 
     public String getType() {
         return genre;
@@ -28,4 +30,8 @@ public class Novel extends Book implements Digital {
         System.out.println("This book is available now in digital mode too.");
     }
 
+    @Override
+    public String toString() {
+        return "The novel ";
+    }
 }

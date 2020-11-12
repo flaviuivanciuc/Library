@@ -16,7 +16,7 @@ public class Album extends Book implements Digital {
         this.paperFormat = paperFormat;
     }
 
-    public Album(String paperFormat) {
+    public Album(int nrPages, String name, String author, float price, int isbn, String paperFormat) {
         super();
         this.paperFormat = paperFormat;
     }

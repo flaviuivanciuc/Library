@@ -54,7 +54,7 @@ public class Book implements Digital {
         this.isbn = isbn;
     }
 
-    void getDescription() {
+    public void getDescription() {
         System.out.println("The book " + name + " is written by " + author + " and has " + nrPages + " pages. \nIt's price is " + price + " $");
     }
 
