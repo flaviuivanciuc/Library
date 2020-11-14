@@ -10,13 +10,21 @@ public class Book implements Digital {
     private float price;
     private int isbn;
 
+    public Book(){ }
+
+    public Book(int nrPages, String name, String author, float price, int isbn) {
+        this.nrPages = nrPages;
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.isbn = isbn;
+    }
+
     public int getIsbn(){return isbn; }
 
     public void setIsbn(int isbn) { this.isbn = isbn; }
 
-    public int getNrPages() {
-        return nrPages;
-    }
+    public int getNrPages() { return nrPages; }
 
     public void setNrPages(int nrPages) {
         this.nrPages = nrPages;
@@ -42,25 +50,11 @@ public class Book implements Digital {
         return price;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public Book(int nrPages, String name, String author, float price, int isbn) {
-        this.nrPages = nrPages;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.isbn = isbn;
-    }
+    public void setPrice(float price) { this.price = price; }
 
     public void getDescription() {
-        System.out.println("The book " + name + " is written by " + author + " and has " + nrPages + " pages. \nIt's price is " + price + " $");
-    }
-
-    @Override
-    public void setToDigital() {
-        System.out.println("This book is available now in digital mode too.");
+        System.out.println("The book " + getName() + " is written by " + getAuthor() + " and has " + getNrPages() + " pages.");
+        System.out.println("\tIt's price is " + getPrice() + " $");
     }
 
     @Override
@@ -78,6 +72,12 @@ public class Book implements Digital {
 
     @Override
     public String toString() {
-        return name + " by " + author + ". The book has " + nrPages + " pages. The price is " + price + " $" + ". ISBN: " + isbn + '\n';
+        return name + " by " + author + " (" + nrPages + " pages). \n\t\tThe price is " + price + " $" + "\n\t\t\tISBN: " + isbn + '\n';
     }
+
+    @Override
+    public void setToDigital() {
+        System.out.println("This book is available now in digital mode too.");
+    }
+
 }

@@ -1,10 +1,14 @@
 package library.books;
 
+import library.Book;
 import library.Digital;
 
-import java.awt.print.Book;
-
 public class Album extends Book implements Digital {
+
+    public Album(int nrPages, String name, String author, float price, int isbn, String paperFormat) {
+        super(nrPages, name, author, price, isbn);
+        this.paperFormat = paperFormat;
+    }
 
     private String paperFormat;
 
@@ -13,11 +17,6 @@ public class Album extends Book implements Digital {
     }
 
     public void setPaperFormat(String paperFormat) {
-        this.paperFormat = paperFormat;
-    }
-
-    public Album(int nrPages, String name, String author, float price, int isbn, String paperFormat) {
-        super();
         this.paperFormat = paperFormat;
     }
 
